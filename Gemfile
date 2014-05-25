@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -15,7 +15,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'protected_attributes'
 gem 'bootstrap-sass'
-gem 'devise'
+# gem 'devise', '~>3.1.2'
+gem "devise", :git => "http://github.com/plataformatec/devise.git"
+
+# gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

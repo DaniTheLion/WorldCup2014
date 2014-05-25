@@ -1,3 +1,14 @@
+GIT
+  remote: http://github.com/plataformatec/devise.git
+  revision: 395b5c4237393a88e5b00c653b52eb74ff603e95
+  specs:
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,8 +39,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    bcrypt-ruby (3.1.2)
-    bootstrap-sass (3.0.3.0)
+    bcrypt (3.1.7)
+    bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
     coffee-rails (4.0.1)
@@ -39,10 +50,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    devise (1.4.7)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.0.3)
-      warden (~> 1.0.3)
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
@@ -60,7 +67,7 @@ GEM
     mime-types (1.25.1)
     minitest (5.3.4)
     multi_json (1.10.1)
-    orm_adapter (0.0.7)
+    orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
     protected_attributes (1.0.7)
@@ -118,7 +125,7 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    warden (1.0.6)
+    warden (1.2.3)
       rack (>= 1.0)
 
 PLATFORMS
@@ -127,7 +134,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
-  devise
+  devise!
   jbuilder (~> 2.0)
   jquery-rails
   pg

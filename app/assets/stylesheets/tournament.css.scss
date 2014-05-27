@@ -9,14 +9,24 @@ body {
 }
 
 .match{
+	width: 745px;
+	padding-top: 35px;
+
 	span{
-		font-size: 35px;
+		font-size: 22px;
 	}
 	.team_a{
 		padding-left: 50px;
 	}
 	.team_b {
-		float: right;
+		img {
+			float: right;		
+		}
+		div{
+			
+			float: left;
+			text-align: right;		
+		}
 		padding-right: 50px;
 	}
 }

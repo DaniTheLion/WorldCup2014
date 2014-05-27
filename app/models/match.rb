@@ -4,6 +4,6 @@ class Match < ActiveRecord::Base
 
 	enum round: [:group_round, :quarter_final, :semi_final, :final]
 
-	attr_accessible :round, :starting_time
+	attr_accessible :round, :starting_time, :team_a, :team_b
 
 end

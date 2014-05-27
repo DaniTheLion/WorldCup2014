@@ -1,7 +1,6 @@
-Matches
+<%= content_tag :div, class: 'row' do -%>
 
-<% @matches.each do |m| %>
-	<%= m.team_a.code %>
-	<%= m.team_b.code %>
-	<%= m.score %>
-<% end %>
+	<%= content_tag :div, class: 'col-md-12' do -%>
+		<%= render partial: 'tournament/matches' %>	
+	<% end -%>
+<% end -%>

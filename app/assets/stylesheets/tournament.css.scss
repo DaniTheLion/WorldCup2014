@@ -1,3 +1,22 @@
 // Place all the styles related to the tournament controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	background: #e0e0e0;
+	margin-left: 150px;
+	margin-right: 150px;
+}
+
+.match{
+	span{
+		font-size: 35px;
+	}
+	.team_a{
+		padding-left: 50px;
+	}
+	.team_b {
+		float: right;
+		padding-right: 50px;
+	}
+}

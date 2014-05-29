@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'protected_attributes'
 gem 'bootstrap-sass'
 # gem 'devise', '~>3.1.2'
-gem "devise", :git => "http://github.com/plataformatec/devise.git"
+gem "devise", :git => "https://github.com/plataformatec/devise.git"
 
 # gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 # Use jquery as the JavaScript library

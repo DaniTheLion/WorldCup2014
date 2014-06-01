@@ -1,6 +1,11 @@
 <%= content_tag :div, class: 'row' do -%>
 
-	<%= content_tag :div, class: 'col-md-12' do -%>
+	<%= content_tag :div, class: 'col-md-9' do -%>
 		<%= render partial: 'matches' %>	
 	<% end -%>
+	<%= content_tag :div, class: 'col-md-3' do -%>
+		<%= content_tag :h2, 'User Ranking' %>	
+		<%= content_tag :p, '[ Will be available once the cup is on its way ]' %>	
+	<% end -%>
+
 <% end -%>

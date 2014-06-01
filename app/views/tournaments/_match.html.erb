@@ -1,13 +1,16 @@
-<%= content_tag :div, class: 'row match', id: "match-#{match.id}" do -%>
+<%= content_tag :div, class: 'row match jumbotron', id: "match-#{match.id}" do -%>
 	<%= content_tag :p, class: 'col-md-5 team_a' do -%>
 		<%= flag_tag match.team_a %>
 		<%= content_tag :span, match.team_a.name.upcase %>
 	<% end -%>
 
-	<%= content_tag :span, match.starting_time.strftime('%I:%M'), style: 'margin:auto;', class: 'time col-md-2' %>
+	<%= content_tag :span, style: 'margin:auto;', class: 'time col-md-2' do-%>
+		<%= content_tag :div, match.starting_time.strftime('%d|%m'), class: 'match-date' %>
+		<%= content_tag :div, match.starting_time.strftime('%I:%M'), class: 'match-time' %>
+	<% end -%>
 
 	<%= content_tag :span, class: 'team_b col-md-5' do -%>
-		<%= flag_tag match.team_b %>
 		<%= content_tag :p, match.team_b.name.upcase, class: 'text-right' %>
+		<%= flag_tag match.team_b %>
 	<% end -%>
 <% end -%>

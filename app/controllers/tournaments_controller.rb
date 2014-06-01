@@ -4,6 +4,7 @@ class TournamentsController < ApplicationController
 
 	def show
       @matches = Match.all
+      @teams = Team.all
       respond_to do |format|
 	  	format.html
 	  	format.js
@@ -22,7 +23,7 @@ class TournamentsController < ApplicationController
 
 
 	def place_bet
-	  current_user.bets.create!(bet_params)
+	  current_user.bets.create(bet_params)
 
       respond_to do |format|
       	if current_user.placed_full_bet?

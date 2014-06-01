@@ -9,13 +9,6 @@ class User < ActiveRecord::Base
 
   has_many :bets
 
-
-  def place_bet(bet)
-    b = bets.new
-    b.type_of_bet = Bet.type_for(bet_setup_step)
-    b.save
-  end
-
   def bet_setup_step
     bets.count
   end

@@ -15,10 +15,10 @@ body {
 	span{
 		font-size: 22px;
 	}
-	// .team_a{
-	// 	padding-left: 100px;
-	// }
+	.team_a{
+		padding-left: 50px;
 	.team_b {
+
 		img {
 			float: right;
 			// padding-right: 		
@@ -42,3 +42,15 @@ body {
 	height: 600px;
 
 }
+=======
+			float: right;		
+		}
+		div{
+			
+			float: left;
+			text-align: right;		
+		}
+		padding-right: 50px;
+	}
+}
+>>>>>>> b0d1b844246341c0671af5065fe12e3c85914f9a

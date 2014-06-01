@@ -10,7 +10,7 @@
 	<% end -%>
 
 	<%= content_tag :span, class: 'team_b col-md-5' do -%>
-		<%= content_tag :p, match.team_b.name.upcase, class: 'text-right' %>
+		<%= content_tag :div, match.team_b.name.upcase, class: 'text-right' %>
 		<%= flag_tag match.team_b %>
 	<% end -%>
 <% end -%>

@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resource :tournament
-  root to: 'tournament#show'
+  resource :tournament do
+    get 'new_bet'
+    post 'place_bet'
+  end
+
+  root to: 'tournaments#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -6,4 +6,21 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
+
+  has_many :bets
+
+
+  def place_bet(bet)
+    b = bets.new
+    b.type_of_bet = Bet.type_for(bet_setup_step)
+    b.save
+  end
+
+  def bet_setup_step
+    bets.count
+  end
+
+  def placed_full_bet?
+  	bets.count == 4 
+  end
 end

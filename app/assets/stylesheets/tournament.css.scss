@@ -4,17 +4,28 @@
 
 body {
 	background: #e0e0e0;
-	margin-left: 150px;
-	margin-right: 150px;
+	// margin-left: 150px;
+	padding-left: 30px;
+	padding-right: 30px;
+	// margin-right: 150px;
+
+	.container-fluid{
+	}
 }
 
 .match{
-	width: 745px;
+	// width: 745px;
 	padding-top: 35px;
-
-	span{
+	padding-bottom: 35px;
+	// height: 130px;
+	span,div{
 		font-size: 22px;
 	}
+	.time {
+		text-align: center;
+	}
+
+
 	.team_a{
 		padding-left: 50px;
 		p {
@@ -24,12 +35,7 @@ body {
 	}
 	.team_b {
 
-		div{
-			
-			margin-left: 100px;
-			float: left;
-			text-align: right;		
-		}
+		
 		img {
 			float: right;
 			// padding-right: 		

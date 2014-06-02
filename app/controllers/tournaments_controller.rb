@@ -27,7 +27,9 @@ class TournamentsController < ApplicationController
 
       respond_to do |format|
       	if current_user.placed_full_bet?
-     	  format.js{ redirect_to tournament_path }
+        # format.js{ redirect_to tournament_path }
+     	    # redirect_to tournament_path 
+          format.js { render :js => "window.location.href = '#{tournament_path}'" }
       	else 
       	  format.js{ redirect_to new_bet_tournament_path}
       	end

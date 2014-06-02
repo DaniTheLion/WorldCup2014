@@ -3,11 +3,11 @@ class TournamentsController < ApplicationController
 	before_filter :validate_placed_bet, only: :show 
 
 	def show
-      @matches = Match.all
+      @next_matches = Match.where("starting_time > ?", Time.now).all
       @teams = Team.all
       respond_to do |format|
-	  	format.html
-	  	format.js
+      	format.html
+      	format.js
 	  end
 	end
 
@@ -54,11 +54,11 @@ class TournamentsController < ApplicationController
   	end
 
   	def validate_placed_bet
-	  if current_user.placed_full_bet? 
-	  	return
-	  else
-	  	redirect_to new_bet_tournament_path 
-	  end
+  	  if current_user.placed_full_bet? 
+  	  	return
+  	  else
+  	  	redirect_to new_bet_tournament_path 
+  	  end
   	end
 
   	def bet_params

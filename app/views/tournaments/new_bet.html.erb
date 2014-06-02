@@ -1,4 +1,9 @@
-<%= content_tag :div, class: 'jumbotron bet_setup' do -%>
-	<p class="header">Place your bet</p>
-	<%= render partial: "step_#{@step}" %>
+<%= content_tag :div, class: 'div jumbotron bet_setup' do -%>
+	<div class='col-md-6'>
+		<p class="header">Place your bet</p>
+		<%= render partial: "step_#{@step}" %>
+	</div>
+	<div class='col-md-6'>
+		<%= render partial: "rules" %>
+	</div>
 <%- end %>

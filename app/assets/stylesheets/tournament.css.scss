@@ -49,7 +49,11 @@ body {
 	.header{
 		font-size: 70px;		
 	}
-
+	.rules{
+		height: 480px;
+		overflow-y: scroll;
+	}
+	// overflow-y: scroll;
 	height: 600px;
 
 }

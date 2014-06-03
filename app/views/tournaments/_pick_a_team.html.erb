@@ -1,5 +1,5 @@
 <%= simple_form_for(:bet, url: place_bet_tournament_path, remote: true) do |f| %>
-  <%= f.input :team_id, label: false, as: :radio_buttons, collection: @teams, required: true %>
+  <%= f.input(:team_id, label: false, as: :radio_buttons, collection: @teams, required: true, label_method: lambda { |t| team_name_and_flag(t) }) %>
   <%= f.hidden_field :type_of_bet, value: @type_of_bet %>
   <%= f.button :submit, 'Next' %>
 <% end %>

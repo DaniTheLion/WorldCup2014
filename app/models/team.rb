@@ -7,5 +7,4 @@ class Team < ActiveRecord::Base
 	scope :third_rank, -> { where(:name => ['Greece', 'Chile', 'Ecuador', 'Côte d\'Ivoire', 'Nigeria', 'Cameroon', 'Boasnia and Herzegovina','USA']) }
 	scope :forth_rank, -> { where(:name => ['Japan', 'Iran', 'Australia', 'Korea Republic', 'Costa Rica', 'Honhuras', 'Algeria','Ghana']) }
 
-
 end

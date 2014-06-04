@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 Team.create([
 	{name: 'Algeria', code: 'alg'},
 	{name: 'Cameroon', code: 'cmr'},
@@ -26,7 +27,7 @@ Team.create([
 	{name: 'Netherlands', code: 'ned'},
 	{name: 'Portugal', code: 'por'},
 	{name: 'Russia', code: 'rus'},
-	{name: 'Spain', code: 'eps'},
+	{name: 'Spain', code: 'esp'},
 	{name: 'Switzerland', code: 'sui'},
 	{name: 'Costa Rica', code: 'crc'},
 	{name: 'Honhuras', code: 'hon'},
@@ -39,6 +40,23 @@ Team.create([
 	{name: 'Ecuador', code: 'ecu'},
 	{name: 'Uruguay', code: 'uru'}	])
 
+
+def rank_of(team)
+	if Team.first_rank.include?(team)
+		1
+	elsif Team.second_rank.include?(team)
+		2
+	elsif Team.third_rank.include?(team)
+		3
+	elsif Team.forth_rank.include?(team)
+		4
+	end
+end
+
+Team.all.each do |t|
+	t.rank = rank_of(t)
+	t.save
+end
 
 teams = Hash[ Team.all.collect{|t| [t.name,t]}]
 

@@ -9,6 +9,12 @@
 </head>
 <body>
 <%= render :partial => 'shared/header' %>
+<script type="text/javascript">
+    $(function(){ // I use jQuery in this example
+		$('.countdown').countdown({until: new Date(2014, 5, 12, 19,0,0)});
+   });
+</script>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <div class='container-fluid'>

@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.header{
+	.countdown{
+		width: 225px;
+		height: 53px;
+		float: right;
+		margin-top: 20px;
+	}
+	h3 {
+		float: left;
+	}
+}
+
+
 body {
 	background: #e0e0e0;
 	// margin-left: 150px;
@@ -9,8 +22,7 @@ body {
 	padding-right: 30px;
 	// margin-right: 150px;
 
-	.container-fluid{
-	}
+
 }
 
 .match{

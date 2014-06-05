@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
+
 Team.create([
 	{name: 'Algeria', code: 'alg'},
 	{name: 'Cameroon', code: 'cmr'},
@@ -42,13 +45,13 @@ Team.create([
 
 
 def rank_of(team)
-	if Team.first_rank.include?(team)
+	if %w'Spain Germany Brazil Portugal Argentina Switzerland Uruguay Colombia'.include?(team.name)
 		1
-	elsif Team.second_rank.include?(team)
+	elsif %w'Italy England Belgium Greece USA Chile Netherlands France'.include?(team.name)
 		2
-	elsif Team.third_rank.include?(team)
+	elsif ['Croatia', 'Russia', 'Mexico', 'Boasnia and Herzegovina', 'Algeria', 'Côte d\'Ivoire', 'Ecuador','Costa Rica'].include?(team.name)
 		3
-	elsif Team.forth_rank.include?(team)
+	elsif ["Cameroon", "Ghana", "Nigeria", "Australia", "Iran", "Japan", "Korea Republic", "Honhuras"].include?(team.name)
 		4
 	end
 end

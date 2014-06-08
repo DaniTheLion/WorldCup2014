@@ -21,7 +21,7 @@ class TournamentsController < ApplicationController
 	  end
 	end
 
-
+  # ahm..
 	def place_bet
 	  current_user.bets.create(bet_params)
 

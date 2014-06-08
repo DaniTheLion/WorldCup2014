@@ -15,6 +15,7 @@
 }
 
 
+
 body {
 	background: #e0e0e0;
 	// margin-left: 150px;
@@ -66,6 +67,31 @@ body {
 		overflow-y: scroll;
 	}
 	// overflow-y: scroll;
+	
+	.btn{
+		background-color: #aad2ff;
+	}
+
 	height: 730px;
 
+
+	// input[type="radio"]{
+	// 	margin-top: 30px;
+ //  		vertical-align: middle;
+	// }
+}
+
+// .all-teams
+// {
+// 	height: 910px;
+// }
+.all-teams-radio {
+	
+	.radio {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		float: left;
+		width:	130px;
+		height: 75px;
+	}
 }

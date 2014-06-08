@@ -49,6 +49,8 @@ class TournamentsController < ApplicationController
       	Team.third_rank
       when 3
       	Team.forth_rank
+      else
+        Team.all
       end
 
   	end

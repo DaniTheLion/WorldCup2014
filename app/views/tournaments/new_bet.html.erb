@@ -1,4 +1,4 @@
-<%= content_tag :div, class: 'jumbotron bet_setup' do -%>
+<%= content_tag :div, class: "jumbotron bet_setup #{'all-teams' if @step > 3}" do -%>
 	<div class='col-md-6'>
 		<p class="header">Place your bet</p>
 		<%= render partial: "step_#{@step}" %>

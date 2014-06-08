@@ -1,1 +1,12 @@
-$('.bet-setup').replaceWith('<%=j render partial: "step_#{@step}"%>');
+$('.bet-setup').fadeOut(200, function(){
+
+<% if @step == 4 %>
+	$('.jumbotron').animate({height: "+=100px"}, {duration: 500, complete: function(){
+		$('.bet-setup').html('<%=j render partial: "step_#{@step}"%>');
+		$('.bet-setup').fadeIn(200);
+	}});
+<% else %>
+	$('.bet-setup').html('<%=j render partial: "step_#{@step}"%>');
+	$('.bet-setup').fadeIn(200);
+<% end %>
+});

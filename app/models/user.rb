@@ -14,6 +14,6 @@ class User < ActiveRecord::Base
   end
 
   def placed_full_bet?
-  	bets.count == 4 
+  	bets.count == 6
   end
 end

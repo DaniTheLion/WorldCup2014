@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   	bets.count == 6
   end
 
-  def name
-    "#{first_name} #{last_name}"
+  def name_with_nickname
+    "#{first_name.capitalize} '#{nickname.capitalize}' #{last_name.capitalize}"
   end
 
 end

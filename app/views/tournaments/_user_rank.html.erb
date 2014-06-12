@@ -5,7 +5,7 @@
   <tbody>
     <% @users.each do |user| %>
     	<tr>
-    		<td><%= user.name %></td>
+    		<td><%= user.name_with_nickname %></td>
     		<td><%= user.points %></td>
     	</tr>
     <% end %>

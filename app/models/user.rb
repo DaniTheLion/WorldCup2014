@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def name_with_nickname
-    "#{first_name.capitalize} '#{nickname.try(:capitalize)}' #{last_name.capitalize}"
+    "#{first_name.try(:capitalize)} '#{nickname.try(:capitalize)}' #{last_name.try(:capitalize)}"
   end
 
 end

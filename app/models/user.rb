@@ -16,4 +16,9 @@ class User < ActiveRecord::Base
   def placed_full_bet?
   	bets.count == 6
   end
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
 end

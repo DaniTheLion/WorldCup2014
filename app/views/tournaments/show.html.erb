@@ -3,9 +3,8 @@
 	<%= content_tag :div, class: 'col-md-9' do -%>
 		<%= render partial: 'matches' %>	
 	<% end -%>
-	<%= content_tag :div, class: 'col-md-3' do -%>
-		<%= content_tag :h2, 'User Ranking' %>	
-		<%= content_tag :p, '[ Will be available once the cup is on its way ]' %>	
+	<%= content_tag :div, class: 'col-md-3 user-rank' do -%>
+		<%= render partial: 'user_rank' %>	
 	<% end -%>
 
 <% end -%>

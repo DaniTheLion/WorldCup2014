@@ -5,6 +5,7 @@ class TournamentsController < ApplicationController
 	def show
       @next_matches = Match.where("starting_time > ?", Time.now).all
       @teams = Team.all
+      @users = User.order('points desc').all
       respond_to do |format|
       	format.html
       	format.js

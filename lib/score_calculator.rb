@@ -1,4 +1,6 @@
 module ScoreCalculator
+		SCORE_PER_GOAL = 0.5
+
 		SCORES_BY_RANK_VS_RANK = { 
 			1 => {
 				1 => { win: 3, draw: 1, lost: 0 },

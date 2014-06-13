@@ -22,32 +22,20 @@ describe ScoreCalculator do
         @match.score = { team_a_score: t_a_score, team_b_score: t_b_score }
         expected_score = ScoreCalculator::SCORES_BY_RANK_VS_RANK[@r1][@r2][res]
 
-        expect( ScoreCalculator.send(:team_score_for_match, @team_a, @match) ).to eq(expected_score)
+        expect( ScoreCalculator.send(:bet_score_for_match, @bet, @match) ).to eq(expected_score)
       end
     end
 
     it "returns correct score for scores the most bet" do
-      [:scores_the_most_bet, :gets_the_most_bet].each do |bet|
+      [[:scores_the_most_bet, true], [:gets_the_most_bet, false]].each do |bet, scoring_team|
         @bet = FactoryGirl.create(bet, team_id: @team_a.id)
         @match = FactoryGirl.build(:match, team_a: @team_a, team_b: @team_b)
         t_a_score = rand(10)
         t_b_score = rand(10)
         @match.score = {team_a_score: t_a_score, team_b_score: t_b_score}
-        expected_score = t_a_score * ScoreCalculator::SCORE_PER_GOAL
-        expect( ScoreCalculator.send(:team_score_for_match, @team_a, @match) ).to eq(expected_score)
+        expected_score = (scoring_team ? t_a_score : t_b_score) * ScoreCalculator::SCORE_PER_GOAL
+        expect( ScoreCalculator.send(:bet_score_for_match, @bet, @match) ).to eq(expected_score)
       end
     end
-
-    # it "returns correct score for lost" do
-    #   throw 'danix'
-    # end
-
-    # it "returns correct score for goal scoring" do
-    #   throw 'danix'
-    # end
-
-    # it "returns correct score for getting goals scored to" do
-    #   throw 'danix'
-    # end
   end
 end

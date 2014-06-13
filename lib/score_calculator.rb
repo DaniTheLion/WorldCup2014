@@ -46,13 +46,20 @@ module ScoreCalculator
 	private
 		def self.user_score_for_match(user, match)
 			relevant_bets = user.bets.includes(:team).select{ |b| match.teams.include?(b.team) }
-			a = relevant_bets.collect{ |bet| team_score_for_match(bet.team, match) }.compact.sum
+			a = relevant_bets.collect{ |bet| bet_score_for_match(bet, match) }.compact.sum
 		end
 
-		def self.team_score_for_match(team, match)
-			r1 = team.rank
-			r2 = match.other_team(team).rank
-			result = match.result_for(team)
-			SCORES_BY_RANK_VS_RANK[r1][r2][result]
+		def self.bet_score_for_match(bet, match)
+			bet_type = bet.type_of_bet.to_sym
+			if [:team_a, :team_b, :team_c, :team_d].include? bet_type 
+				r1 = bet.team.rank
+				r2 = match.other_team(bet.team).rank
+				result = match.result_for(bet.team)
+				SCORES_BY_RANK_VS_RANK[r1][r2][result]
+			elsif bet_type == :scores_the_most
+				match.score_of(bet.team) * SCORE_PER_GOAL
+			elsif bet_type == :gets_the_most
+				match.score_of(match.other_team(bet.team)) * SCORE_PER_GOAL
+			end				
 		end
 end

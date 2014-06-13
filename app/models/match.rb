@@ -52,4 +52,12 @@ class Match < ActiveRecord::Base
 	def draw?
 		team_a_score.to_i == team_b_score.to_i
 	end
+
+	def score_of team
+		if team == team_a 
+			team_a_score.to_i
+		elsif team == team_b
+			team_b_score.to_i
+		end
+	end
 end

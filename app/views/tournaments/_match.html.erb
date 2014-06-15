@@ -1,18 +1,26 @@
 <%= content_tag :div, class: 'row match jumbotron', id: "match-#{match.id}" do -%>
-	<%= content_tag :div, class: 'col-md-5 team_a' do -%>
-		<%= flag_tag match.team_a %>
-		<strong><%= content_tag :span, match.team_a.name.upcase %></strong>
-	<% end -%>
-
-	<%= content_tag :div, class: 'time col-md-2' do-%>
-		<%= content_tag :div, match.starting_time.strftime('%d|%m'), class: 'match-date' %>
-		 <%= content_tag :div, match.starting_time.strftime('%k:%M'), class: 'match-time' %>
-	<% end -%>
-
-	<%= content_tag :div, class: 'team_b col-md-5' do -%>
-		<%= flag_tag match.team_b %>
-		<%= content_tag :div, class: 'text-right' do -%>
-			<strong><%= match.team_b.name.upcase %> </strong>
+	<div class "row match-container">
+		<%= content_tag :div, class: 'col-md-5 team_a' do -%>
+			<%= flag_tag match.team_a %>
+			<strong><%= content_tag :span, match.team_a.name.upcase %></strong>
 		<% end -%>
-	<% end -%>
+
+		<%= content_tag :div, class: 'time col-md-2' do-%>
+			<%= content_tag :div, match.starting_time.strftime('%d|%m'), class: 'match-date' %>
+			 <%= content_tag :div, match.starting_time.strftime('%k:%M'), class: 'match-time' %>
+		<% end -%>
+
+		<%= content_tag :div, class: 'team_b col-md-5' do -%>
+			<%= flag_tag match.team_b %>
+			<%= content_tag :div, class: 'text-right' do -%>
+				<strong><%= match.team_b.name.upcase %> </strong>
+			<% end -%>
+		<% end -%>
+	</div>
+	<div class="personal-msg row">
+		<%= content_tag :div, class: 'col-md-12' do -%>
+			<div><%= future_match_regular_bet_prospect match %></div>
+			<div><%= future_match_custom_bet_prospect match %></div>
+		<% end %>
+	</div>
 <% end -%>

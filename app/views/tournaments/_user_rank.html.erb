@@ -5,8 +5,29 @@
   <tbody>
     <% @users.each do |user| %>
     	<tr>
-    		<td><%= user.name_with_nickname %></td>
-    		<td><%= user.points %></td>
+    		<td data-user="<%= user.id %>">
+          <%= user.name_with_nickname %>
+          <div class="user-bet">
+            <table>
+              <thead>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>+</th>
+                <th>-</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <% user.bets.each do |bet| %>
+                    <td><%= flag_tag bet.team %>
+                  <% end %>              
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+        <td class="points"><%= user.points %></td>
     	</tr>
     <% end %>
   </tbody>

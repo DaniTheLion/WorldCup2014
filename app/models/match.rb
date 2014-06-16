@@ -60,4 +60,8 @@ class Match < ActiveRecord::Base
 			team_b_score.to_i
 		end
 	end
+
+	def future_match?
+		score.nil?
+	end
 end

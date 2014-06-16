@@ -4,8 +4,8 @@ class TournamentsController < ApplicationController
 
 	def show
       # @next_matches = Match.where("starting_time > ?", Time.now).all
-      @next_matches = Match.where("score is null").order('starting_time asc').all
-      @past_matches = Match.completed.order('starting_time desc').all
+      @next_matches = Match.where("score is null").order('starting_time asc').first(10)
+      @past_matches = Match.completed.order('starting_time desc').last(10)
       @teams = Team.all
       @users = User.order('points desc').all
       respond_to do |format|

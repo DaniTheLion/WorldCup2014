@@ -9,7 +9,7 @@
 			<% if match.future_match? %>		
 				<%= content_tag :div, match.starting_time.strftime('%d|%m'), class: 'match-date' %>
 				<%= content_tag :div, match.starting_time.strftime('%k:%M'), class: 'match-time' %>
-	        <% else !match.score.nil? %>
+	        <% else %>
 	        	<%= content_tag :div, "#{match.team_a_score} : #{match.team_b_score}", class: 'match-score' %>
 			<% end -%>
 		<% end -%>

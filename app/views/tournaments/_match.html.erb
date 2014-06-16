@@ -7,6 +7,7 @@
 	<%= content_tag :div, class: 'time col-md-2' do-%>
 		<%= content_tag :div, match.starting_time.strftime('%d|%m'), class: 'match-date' %>
 		 <%= content_tag :div, match.starting_time.strftime('%k:%M'), class: 'match-time' %>
+        <%= content_tag :div, "#{match.team_a_score}:#{match.team_b_score}", class: 'match-time' %>
 	<% end -%>
 
 	<%= content_tag :div, class: 'team_b col-md-5' do -%>

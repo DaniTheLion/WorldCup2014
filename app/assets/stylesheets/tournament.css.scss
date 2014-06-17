@@ -40,20 +40,21 @@ body {
 
 
 	.team_a{
-		padding-left: 50px;
-		p {
-			float: left;
-			// padding-right: 		
-		}
+      padding-left: 50px;
+      p {
+        float: left;
+      }
+      .flag {
+        padding-right: 10px;
+      }
 	}
 	.team_b {
-
-		
 		img {
 			float: right;
-			// padding-right: 		
 		}
-		// padding-right: 50px;
+      .flag {
+        padding-left: 10px;
+      }
 	}
 
 	.personal-msg {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613221742) do
+ActiveRecord::Schema.define(version: 20140629205256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140613221742) do
   create_table "matches", force: true do |t|
     t.integer  "team_a_id"
     t.integer  "team_b_id"
-    t.string   "round"
+    t.integer  "round"
     t.datetime "starting_time"
     t.datetime "created_at"
     t.datetime "updated_at"

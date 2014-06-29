@@ -4,11 +4,11 @@ class Match < ActiveRecord::Base
 	belongs_to :team_a, class_name: "Team", foreign_key: "team_a_id"
 	belongs_to :team_b, class_name: "Team", foreign_key: "team_b_id"
 
-	enum round: [:group_round, :quarter_final, :semi_final, :final]
+	enum round: [:group_round, :eighth_final, :quarter_final, :semi_final, :final]
 
 	attr_accessible :round, :starting_time, :team_a, :team_b
 
-	store_accessor :score, :team_a_score, :team_b_score 
+	store_accessor :score, :team_a_score, :team_b_score, :shoot_out
 
 	scope :completed, -> { where("score is not null") }
 
@@ -23,13 +23,23 @@ class Match < ActiveRecord::Base
 	end
 
 	def result_for(team)
-		if draw?
+		if shoot_out 
+			result_for_shoot_out(team)
+		elsif draw?
 			:draw
 		elsif team == winner
 			:win
 		elsif team == loser
 			:lost
 		end
+	end
+
+
+	def result_for_shoot_out(team)
+		a_score = shoot_out[:team_a_shoot_out_score].to_i
+		b_score = shoot_out[:team_b_shoot_out_score].to_i
+		winner = a_score > b_score ? team_a : team_b
+		team == winner ? :win : :lost
 	end
 
 	def winner
